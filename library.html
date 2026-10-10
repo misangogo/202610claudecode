@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>近くの図書館検索</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="library.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main class="card">
+    <h1 class="title">近くの図書館検索</h1>
+    <p class="subtitle">現在地から近い図書館をカーリルAPIで検索します</p>
+
+    <section class="key-section">
+      <label for="appkeyInput" class="key-label">カーリルAPIキー</label>
+      <div class="key-row">
+        <input id="appkeyInput" class="key-input" type="text" placeholder="APIキーを入力" autocomplete="off">
+        <button id="saveKeyBtn" class="btn btn-ghost btn-small">保存</button>
+      </div>
+      <p class="key-hint">
+        入力したキーはこの端末のブラウザ内のみに保存され、どこにも送信・公開されません。
+        キーの取得方法は<a href="https://calil.jp/doc/api_ref.html" target="_blank" rel="noopener">カーリルAPI仕様書</a>をご覧ください。
+      </p>
+    </section>
+
+    <button id="searchBtn" class="btn btn-primary">
+      <span>現在地から探す</span>
+    </button>
+
+    <p id="statusText" class="status-text" aria-live="polite"></p>
+    <p id="errorText" class="error-text" hidden></p>
+
+    <ul id="resultList" class="result-list"></ul>
+  </main>
+
+  <script src="library.js"></script>
+</body>
+</html>
