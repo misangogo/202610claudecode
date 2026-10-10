@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ランダムポケモン</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pokemon.css">
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main class="card">
+    <h1 class="title">ランダムポケモン</h1>
+    <p class="subtitle">ボタンを押すと、ランダムなポケモンが登場します</p>
+
+    <div class="stage">
+      <div id="sprite-wrap" class="sprite-wrap">
+        <img id="sprite" class="sprite" src="" alt="" hidden>
+        <div id="placeholder" class="placeholder">?</div>
+      </div>
+    </div>
+
+    <div class="info">
+      <span id="pokeNumber" class="poke-number"></span>
+      <h2 id="pokeName" class="poke-name">ここにポケモンが出てきます</h2>
+      <div id="typeBadges" class="type-badges"></div>
+    </div>
+
+    <button id="summonBtn" class="btn btn-primary">
+      <span>ポケモンを呼ぶ！</span>
+    </button>
+
+    <p id="errorText" class="error-text" hidden></p>
+  </main>
+
+  <script src="pokemon.js"></script>
+</body>
+</html>
