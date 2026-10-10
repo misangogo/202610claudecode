@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Timer</title>
+<title>ランダムポケモン</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,35 +13,27 @@
   <div class="aurora" aria-hidden="true"></div>
 
   <main class="card">
-    <div class="status">
-      <span class="status-dot"></span>
-      <span id="statusText">Ready</span>
-    </div>
+    <h1 class="title">ランダムポケモン</h1>
+    <p class="subtitle">ボタンを押すと、ランダムなポケモンが登場します</p>
 
-    <div class="ring-wrap">
-      <svg class="ring" viewBox="0 0 220 220">
-        <circle class="ring-track" cx="110" cy="110" r="98"></circle>
-        <circle class="ring-progress" cx="110" cy="110" r="98"></circle>
-      </svg>
-      <div id="display" class="display">
-        <span id="time">00:00</span><span id="centis">.00</span>
+    <div class="stage">
+      <div id="sprite-wrap" class="sprite-wrap">
+        <img id="sprite" class="sprite" src="" alt="" hidden>
+        <div id="placeholder" class="placeholder">?</div>
       </div>
     </div>
 
-    <div class="controls">
-      <button id="startBtn" class="btn btn-primary" aria-label="Start">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        <span>Start</span>
-      </button>
-      <button id="stopBtn" class="btn btn-secondary" aria-label="Stop" disabled>
-        <svg viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></svg>
-        <span>Stop</span>
-      </button>
-      <button id="resetBtn" class="btn btn-ghost" aria-label="Reset">
-        <svg viewBox="0 0 24 24"><path d="M12 5V2L7 7l5 5V9c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
-        <span>Reset</span>
-      </button>
+    <div class="info">
+      <span id="pokeNumber" class="poke-number"></span>
+      <h2 id="pokeName" class="poke-name">ここにポケモンが出てきます</h2>
+      <div id="typeBadges" class="type-badges"></div>
     </div>
+
+    <button id="summonBtn" class="btn btn-primary">
+      <span>ポケモンを呼ぶ！</span>
+    </button>
+
+    <p id="errorText" class="error-text" hidden></p>
   </main>
 
   <script src="script.js"></script>
